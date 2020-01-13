@@ -24,7 +24,7 @@ public class ExceptionsMain {
 //          int num = 3 / 0;
             ContNull cont = null;
 
-        } catch (ArithmeticException | NullPointerException ex) {
+        } catch (Exception ex) {
             System.out.println("Erro :" + ex.getMessage()+"\n");
             System.out.println("Mostrando Pilha Afetada:\n");
             ex.printStackTrace();
