@@ -25,7 +25,7 @@ public class ExceptionsMain {
             ContNull cont = null;
 
         } catch (Exception ex) {
-            System.out.println("Erro :" + ex.getMessage()+"\n");
+            System.out.println("Erro :" + ex.getMessage() + "\n");
             System.out.println("Mostrando Pilha Afetada:\n");
             ex.printStackTrace();
             System.out.println("Fim Da Pilha >-< ");
