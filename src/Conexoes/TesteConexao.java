@@ -8,7 +8,7 @@ public class TesteConexao {
         }catch (Exception ex){
             System.out.println("Erro na conexão: T-T\n");
         }
-//Conexão sem erros
+//Conexão sem Exceptions
         try (Conexao conexao = new Conexao()){
             conexao.lerDados();
         }catch (Exception ex){
