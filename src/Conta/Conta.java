@@ -27,4 +27,8 @@ public class Conta implements Acoes{
         System.out.println("Conta Referente:\n"+this.cpf);
         contaUtil.verSaldo();
     }
+
+    public String toString() {
+        return "Conta:" + this.cpf;
+    }
 }
