@@ -1,12 +1,12 @@
-package ArrayList;
+package ListJavaUtil;
 
 import Conta.Conta;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class ArrayUtil {
+public class Linked {
     public static void main(String[] args) {
-        ArrayList listObj = new ArrayList();
+        LinkedList listObj = new LinkedList();
 
         Conta c1 = new Conta("123");
         Conta c2 = new Conta("456");
