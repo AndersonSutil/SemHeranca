@@ -5,7 +5,6 @@ public class ContaUtil {
 
     public double deposita(double valor){
         return saldo += valor;
-
     }
 
     public double saca(double valor){
