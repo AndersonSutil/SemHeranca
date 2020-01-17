@@ -6,10 +6,20 @@ public class Conta implements Acoes{
 
     private ContaUtil contaUtil;
     private String cpf;
+    private int IdCpf;
 
-    public Conta(String cpf) {
+    public Conta(String cpf, int IdCpf ) {
         this.contaUtil = new ContaUtil();
         this.cpf = cpf;
+        this.IdCpf = IdCpf;
+    }
+    public Conta(String cpf){
+        this.contaUtil = new ContaUtil();
+        this.cpf = cpf;
+    }
+
+    public int getIdCpf() {
+        return IdCpf;
     }
 
     @Override
@@ -40,6 +50,6 @@ public class Conta implements Acoes{
 
     //Sobrecarga
     public String toString() {
-        return "Conta:" + this.cpf;
+        return "Conta:" + this.cpf+"     "+"IdConta:"+ this.IdCpf;
     }
 }
