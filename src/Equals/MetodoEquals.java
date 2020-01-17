@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class MetodoEquals {
     public static void main(String[] args) {
 
-
         ArrayList<Conta> contas = new ArrayList<Conta>();
 
         Conta c1 = new Conta("123456789");
