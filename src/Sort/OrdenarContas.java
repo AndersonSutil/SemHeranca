@@ -24,8 +24,18 @@ public class OrdenarContas {
         for (Conta conta : contas) {
             System.out.println(conta);
         }
-        //Pode utilizar o null quando vai utilizar o Objeto só no metodo isolado
-        contas.sort(new Ordenador());
+        //Pode utilizar o null quando vai utilizar o Objeto só no metodo isolado "Má Pratica"
+        //Class Anonimas, quando se precisa utilizar apenas uma interface para o metodo,
+        //com isso a jvm cria uma classe anônima só para executar o metodo,
+        // Tem que se Colocar o new ,nome da interface, <Generics>,(Construtor da Classe),{Bloco de codigo}
+        contas.sort(new Comparator<Conta>() {
+                        @Override
+                        public int compare(Conta c1, Conta c2) {
+                            //metodo Simplificado
+                            return Integer.compare(c1.getIdCpf(), c2.getIdCpf());
+                        }
+                    }
+        );
         System.out.println("_____________________\n");
 
         for (Conta conta : contas) {
@@ -45,28 +55,4 @@ public class OrdenarContas {
     }
 
 
-}
-
-class Ordenador implements Comparator<Conta> {
-    /**
-     * Metodo que compara os IdCpf das contas, para ordenar do menor para maior
-     *
-     * @param c1
-     * @param c2
-     * @return
-     */
-    @Override
-    public int compare(Conta c1, Conta c2) {
-        //metodo Simplificado
-        return Integer.compare(c1.getIdCpf() , c2.getIdCpf());
-        //Metodo complexo
-//        if (c1.getIdCpf() < c2.getIdCpf()) {
-//            return -1;
-//        }
-//        if (c2.getIdCpf() > c2.getIdCpf()) {
-//            return 1;
-//        }
-//        return 0;
-
-    }
 }
