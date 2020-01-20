@@ -30,6 +30,10 @@ public class Conta implements Comparable<Conta>, Acoes {
         return IdCpf;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
     @Override
     public double sacar(double valor) {
         return this.contaUtil.saca(valor);

@@ -21,35 +21,35 @@ public class OrdenarContas {
         contas.add(c4);
         contas.add(c5);
 
-        for (Conta conta : contas) {
-            System.out.println(conta);
-        }
-        //Pode utilizar o null quando vai utilizar o Objeto só no metodo isolado "Má Pratica"
-        //Class Anonimas, quando se precisa utilizar apenas uma interface para o metodo,
-        //com isso a jvm cria uma classe anônima só para executar o metodo,
-        // Tem que se Colocar o new ,nome da interface, <Generics>,(Construtor da Classe),{Bloco de codigo}
-        contas.sort(new Comparator<Conta>() {
-                        @Override
-                        public int compare(Conta c1, Conta c2) {
-                            //metodo Simplificado
-                            return Integer.compare(c1.getIdCpf(), c2.getIdCpf());
-                        }
-                    }
-        );
-        System.out.println("_____________________\n");
+        //Lambdas Passa a entrada de parametro() Sinaliza que é um lambda -> Passa o codigoa executar
+        contas.forEach((conta) -> System.out.println(conta));
 
-        for (Conta conta : contas) {
-            System.out.println(conta);
-        }
+        System.out.println("Ordenando por IdConta: _____________________\n");
 
-        System.out.println("______________________\n");
+        contas.sort(Comparator.comparingInt((Conta c) -> c.getIdCpf()));
+
+        //contas.sort((c1,c2) -> Integer.compare(c1.getIdCpf(), c2.getIdCpf()) );
+
+        contas.forEach((conta) -> {
+            System.out.println(conta);
+        });
+
+        System.out.println("Ordenando por Ordem natural, valor na Conta:______________________\n");
 
         // Ordem natural, Utilizando os metodos Statics da Classe Collections
         Collections.sort(contas);
+        contas.forEach ((conta -> System.out.println(conta)));
 
-        for (Conta conta : contas) {
-            System.out.println(conta);
-        }
+        System.out.println("Ordenando por Conta :______________________\n");
+
+        //Usando Lambdas para Criar uma variavel da Interface Comparator
+        Comparator<Conta> comp = (Conta s1,Conta s2) -> {
+            String nomeC1 = s1.getCpf();
+            String nomeC2 = s2.getCpf();
+            return nomeC1.compareTo(nomeC2);
+        };
+        contas.sort(comp);
+        contas.forEach ((conta -> System.out.println(conta)));
 
 
     }
