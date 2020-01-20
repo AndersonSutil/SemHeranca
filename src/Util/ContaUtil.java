@@ -1,7 +1,19 @@
 package Util;
 
-public class ContaUtil {
+public class ContaUtil  {
     private double saldo;
+
+    public ContaUtil(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public ContaUtil(){
+
+    }
 
     public double deposita(double valor){
         return saldo += valor;
@@ -15,4 +27,8 @@ public class ContaUtil {
         System.out.println("Seu Saldo é de:\n"+this.saldo);
     }
 
+//    @Override
+//    public int compareTo(ContaUtil contaUtil) {
+//        return Double.compare(this.getSaldo() , contaUtil.getSaldo());
+//    }
 }
