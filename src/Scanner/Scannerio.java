@@ -17,13 +17,17 @@ public class Scannerio {
             sl.useLocale(Locale.US);
             sl.useDelimiter(",");
 
+
             String valor1 = sl.next();
             int valor2 = sl.nextInt();
             int valor3 = sl.nextInt();
             String valor4 = sl.next();
             double valor5 = sl.nextDouble();
 
-            System.out.println("Tipo: "+valor1+"\nConta: "+valor2+" Agencia: "+valor3+"\nNome: "+valor4+"\nSaldo: "+valor5);
+            String stringFormatada = (String.format(new Locale("pt","BR"), "tipo de Conta: %s %d %d %s %02.2f",
+                    valor1,valor2, valor3,valor4,valor5
+            ));
+            System.out.println(stringFormatada);
         }
         sc.close();
     }
