@@ -6,11 +6,6 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class TestaPerformace {
-    // sera que funciona
-
-
-
-//    Fazendo um teste do revert
 
     //Quando se Utiliza HashSet, Se tem Um ganho em performace pois
     //esse tipo de classe utiliza um tabela Hash
